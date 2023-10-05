@@ -6,7 +6,7 @@ const CategoryList = ({ category }) => {
     <>
       <div key={category?.id} className="text-center">
         <NavLink to={`/category/${category?.id}`} className="text-red-400">
-          <h2 className="text-gray-400 font-medium border-2">
+          <h2 className="text-gray-400 font-medium border-2 p-2">
             {category?.name}
           </h2>
         </NavLink>
