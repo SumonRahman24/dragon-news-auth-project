@@ -5,7 +5,7 @@ import { GoEye } from "react-icons/go";
 
 const NewsCard = ({ singleNews }) => {
   console.log(singleNews);
-  const { image_url, title, details, author, rating, total_view } =
+  const { image_url, title, details, author, rating, total_view, _id } =
     singleNews || {};
   return (
     <div>
@@ -37,7 +37,9 @@ const NewsCard = ({ singleNews }) => {
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {details.slice(0, 75)}...
           </p>
-          <Link className="text-[#FF8C47] underline">Read More</Link>
+          <Link to={`/details/${_id}`} className="text-[#FF8C47] underline">
+            Read More
+          </Link>
         </div>
         <div className="flex justify-between px-2 py-2 border-t-2">
           <div className="flex gap-2">

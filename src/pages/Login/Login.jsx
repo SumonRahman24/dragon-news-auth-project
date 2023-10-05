@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLoginSubmit = (e) => {
     // auto submit stop
@@ -17,7 +19,12 @@ const Login = () => {
 
     // create user
     loginUser(email, password)
-      .then((result) => console.log(result))
+      .then(
+        (result) => console.log(result),
+
+        // navigate after login
+        navigate(location?.state ? location?.state : "/")
+      )
       .catch((error) => console.log(error.message));
   };
 

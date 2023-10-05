@@ -21,7 +21,7 @@ const Home = () => {
           <h2 className="text-lg font-semibold">Dragon News Home</h2>
           <div className="flex flex-col gap-10">
             {newsData?.map((singleNews) => (
-              <NewsCard key={singleNews?.id} singleNews={singleNews} />
+              <NewsCard key={singleNews?._id} singleNews={singleNews} />
             ))}
           </div>
         </div>
